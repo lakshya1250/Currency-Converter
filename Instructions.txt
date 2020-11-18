@@ -1,0 +1,7 @@
+INSTRUCTIONS
+====================
+1. The Currency Rates Are Updated Everytime You Restart The App.
+2. The Application May Take A While To Open.
+3. You Need To Have An Internet Connection To Use This Application.
+4. You Can Find Further Instructions In The App.
+====================
