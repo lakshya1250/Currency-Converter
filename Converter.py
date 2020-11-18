@@ -1,6 +1,7 @@
 # ----- Imports -----
 from openexchangerate import OpenExchangeRates
 from tkinter import *
+import subprocess as sp
 import json
 import time
 
@@ -11,7 +12,6 @@ names = None
 # ----- Functions -----
 def show():
     """Shows The Full Names Of Currencies And Their Currency Codes"""
-    import subprocess as sp
     programName = "notepad.exe"
     fileName = "Codes.txt"
     sp.Popen([programName, fileName])
