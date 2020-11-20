@@ -27,21 +27,15 @@ def get_rates():
     client = OpenExchangeRates(api_key="api_key")
     latest = str(client.latest())
     names = str(client.currencies())
-    latest = latest.split(", frozendict=mappingproxy(", 1)
-    names = names.split(", frozendict=mappingproxy(", 1)
-    latest = str(latest[0])
-    names = str(names[0])
-    latest = latest.split("=", 1)
-    names = names.split("=", 1)
-    latest = str(latest[1])
-    names = str(names[1])
+    latest = latest.split(", frozendict", 1)[0]
+    names = names.split(", frozendict", 1)[0]
+    latest = latest.split("=", 1)[1]
+    names = names.split("=", 1)[1]
     latest = latest.replace("'", '"')
     names = names.replace("'", '"')
     names = names.replace('Tongan Pa"anga', "Tongan Pa'anga")
-    latest = json.loads(latest)
-    names = json.loads(names)
-    latest = dict(latest)
-    names = dict(names)
+    latest = dict(json.loads(latest))
+    names = dict(json.loads(names))
 
 def convert():
     input1=str(entry1.get())
