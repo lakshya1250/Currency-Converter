@@ -37,9 +37,7 @@ def get_rates():
     latest = dict(json.loads(latest))
     names = dict(json.loads(names))
 
-def convert():
-    input1=str(entry1.get())
-    input2=str(entry2.get())
+def convert(input1, input2, amount):
     isfull1 = True
     isfull2 = True
     short1 = None
@@ -137,7 +135,7 @@ from3.place(relx=0.08,rely=0.55,relwidth=0.2,relheight=0.1)
 entry3 = Entry(frame,relief=GROOVE,bg="White",bd=7,font=("Times New Roman",20),fg="Black")
 entry3.place(relx=0.3,rely=0.55,relwidth=0.6,relheight=0.1)
 
-button = Button(frame,relief=RIDGE,text="Convert",bd=7,bg="White",fg="Black",command=convert, font=("Times New Roman", 15))
+button = Button(frame,relief=RIDGE,text="Convert",bd=7,bg="White",fg="Black",command=lambda:convert(entry1.get(), entry2.get(), entry3.get()), font=("Times New Roman", 15))
 button.place(relx=0.1,rely=0.7,relwidth=0.35,relheight=0.1)
 
 button2 = Button(frame,relief=RIDGE,text="View Codes",bd=7,bg="White",fg="Black",command=show, font=("Times New Roman", 15))
