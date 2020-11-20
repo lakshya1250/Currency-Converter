@@ -20,7 +20,7 @@ def helper():
     """Shows The Help Box For Instructions"""
     messagebox.showinfo("Help Text", "Welcome To The Currency Converter. Please Enter The 3 Letter Currency Codes Or The Full Name Of Currencies And Enter The Amount. To View Currency Codes, Click On The View Codes Button.")
 
-def getrates():
+def get_rates():
     """Getting And Formatting The Currency Rates"""
     global latest, names
     final_text = ""
@@ -151,5 +151,5 @@ button2.place(relx=0.55,rely=0.7,relwidth=0.35,relheight=0.1)
 
 # ----- Driver Code -----
 if __name__ == "__main__":
-    getrates()
+    get_rates()
     root.mainloop()
