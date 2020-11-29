@@ -9,13 +9,7 @@ import time
 latest = None
 names = None
 
-# ----- Functions -----
-def show():
-    """Shows The Full Names Of Currencies And Their Currency Codes"""
-    programName = "notepad.exe"
-    fileName = "Codes.txt"
-    sp.Popen([programName, fileName])
-
+# ----- Functions -----    
 def helper():
     """Shows The Help Box For Instructions"""
     messagebox.showinfo("Help Text", "Welcome To The Currency Converter. Please Enter The 3 Letter Currency Codes Or The Full Name Of Currencies And Enter The Amount. To View Currency Codes, Click On The View Codes Button.")
@@ -23,7 +17,6 @@ def helper():
 def get_rates():
     """Getting And Formatting The Currency Rates"""
     global latest, names
-    final_text = ""
     client = OpenExchangeRates(api_key="api_key")
     latest = str(client.latest())
     names = str(client.currencies())
@@ -38,6 +31,7 @@ def get_rates():
     names = dict(json.loads(names))
 
 def convert(input1, input2, amount):
+    """Converting The Currencies"""
     isfull1 = True
     isfull2 = True
     short1 = None
@@ -85,7 +79,6 @@ def convert(input1, input2, amount):
                 if value == input2:
                     num2 = latest[key]
                     short2 = key
-    amount = int(entry3.get())
     am = num2 / num1
     final = amount * am
     final_text = str(str(amount)+" "+names[short1]+" Are \n"+str(final)+" "+names[short2]+" ")
@@ -138,7 +131,7 @@ entry3.place(relx=0.3,rely=0.55,relwidth=0.6,relheight=0.1)
 button = Button(frame,relief=RIDGE,text="Convert",bd=7,bg="White",fg="Black",command=lambda:convert(entry1.get(), entry2.get(), entry3.get()), font=("Times New Roman", 15))
 button.place(relx=0.1,rely=0.7,relwidth=0.35,relheight=0.1)
 
-button2 = Button(frame,relief=RIDGE,text="View Codes",bd=7,bg="White",fg="Black",command=show, font=("Times New Roman", 15))
+button2 = Button(frame,relief=RIDGE,text="View Codes",bd=7,bg="White",fg="Black",command=lambda:sp.Popen([program, file]), font=("Times New Roman", 15))
 button2.place(relx=0.55,rely=0.7,relwidth=0.35,relheight=0.1)
 
 # ----- Driver Code -----
