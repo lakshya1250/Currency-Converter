@@ -9,6 +9,9 @@ import time
 latest = None
 names = None
 
+# Get Your API Key From openexchangerates.org
+# pip install openexchangerates
+
 # ----- Functions -----    
 def helper():
     """Shows The Help Box For Instructions"""
