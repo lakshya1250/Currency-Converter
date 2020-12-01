@@ -82,8 +82,7 @@ def convert(input1, input2, amount):
     am = num2 / num1
     final = amount * am
     final_text = str(str(amount)+" "+names[short1]+" Are \n"+str(final)+" "+names[short2]+" ")
-    label2 = Label(frame, text=str(final_text),font=("Times New Roman", 15), fg="Black", bg="white")
-    label2.place(relx=0.1, rely=0.8, relwidth=0.8, relheight=0.2)    
+    label2["text"] = final_text
     
 # ----- Main Code -----
 
@@ -133,6 +132,9 @@ button.place(relx=0.1,rely=0.7,relwidth=0.35,relheight=0.1)
 
 button2 = Button(frame,relief=RIDGE,text="View Codes",bd=7,bg="White",fg="Black",command=lambda:sp.Popen([program, file]), font=("Times New Roman", 15))
 button2.place(relx=0.55,rely=0.7,relwidth=0.35,relheight=0.1)
+
+label2 = Label(frame,font=("Times New Roman", 15), fg="Black", bg="white")
+label2.place(relx=0.1, rely=0.8, relwidth=0.8, relheight=0.2)    
 
 # ----- Driver Code -----
 if __name__ == "__main__":
