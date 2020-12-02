@@ -6,6 +6,8 @@ import json
 import time
 
 # ----- Global Variables -----
+height = 600
+width = 600
 latest = None
 names = None
 
@@ -92,7 +94,7 @@ def convert(input1, input2, amount):
 # Initializing The Main Tkinter Window
 root = Tk()
 root.title("Currency Converter")
-root.geometry("600x600")
+root.geometry(f"{width}x{height}")
 
 # Initializing And Setting The Images
 logo_image = PhotoImage(file="Logo.png")
