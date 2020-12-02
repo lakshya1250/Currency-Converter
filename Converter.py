@@ -8,6 +8,7 @@ import time
 # ----- Global Variables -----
 height = 600
 width = 600
+background_color = "#00FFFF"
 latest = None
 names = None
 
