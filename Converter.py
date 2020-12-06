@@ -136,7 +136,7 @@ entry3.place(relx=0.3,rely=0.55,relwidth=0.6,relheight=0.1)
 button = Button(frame,relief=RIDGE,text="Convert",bd=7,bg="White",fg="Black",command=lambda:convert(entry1.get(), entry2.get(), entry3.get()), font=("Times New Roman", 15), cursor="hand2")
 button.place(relx=0.1,rely=0.7,relwidth=0.35,relheight=0.1)
 
-button2 = Button(frame,relief=RIDGE,text="View Codes",bd=7,bg="White",fg="Black",command=lambda:sp.Popen([program, file]), font=("Times New Roman", 15), cursor="hand2"Add)
+button2 = Button(frame,relief=RIDGE,text="View Codes",bd=7,bg="White",fg="Black",command=lambda:sp.Popen([program, file]), font=("Times New Roman", 15), cursor="hand2")
 button2.place(relx=0.55,rely=0.7,relwidth=0.35,relheight=0.1)
 
 label2 = Label(frame,font=("Times New Roman", 15), fg="Black", bg="white")
