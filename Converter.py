@@ -112,7 +112,7 @@ frame.place(relx=0.1,rely=0.1,relwidth=0.8,relheight=0.8)
 label = Label(frame, text="Currency Converter", font=("Times New Roman", 20), fg="Black", bg="White")
 label.place(relwidth=0.5, relheight=0.08, relx=0.26, rely=0.055)
 
-info = Button(frame, relief=RIDGE, text="i", font=("Times New Roman", 20), fg="Black", bg="White", command=helper)
+info = Button(frame, relief=RIDGE, text="i", font=("Times New Roman", 20), fg="Black", bg="White", command=helper, cursor="hand2")
 info.place(relwidth=0.1, relheight=0.08, relx=0.85, rely=0.05)
 
 froml = Label(frame, text="From:",font=("Times New Roman",20),fg="Black",bg="White")
@@ -133,10 +133,10 @@ from3.place(relx=0.08,rely=0.55,relwidth=0.2,relheight=0.1)
 entry3 = Entry(frame,relief=GROOVE,bg="White",bd=7,font=("Times New Roman",20),fg="Black")
 entry3.place(relx=0.3,rely=0.55,relwidth=0.6,relheight=0.1)
 
-button = Button(frame,relief=RIDGE,text="Convert",bd=7,bg="White",fg="Black",command=lambda:convert(entry1.get(), entry2.get(), entry3.get()), font=("Times New Roman", 15))
+button = Button(frame,relief=RIDGE,text="Convert",bd=7,bg="White",fg="Black",command=lambda:convert(entry1.get(), entry2.get(), entry3.get()), font=("Times New Roman", 15), cursor="hand2")
 button.place(relx=0.1,rely=0.7,relwidth=0.35,relheight=0.1)
 
-button2 = Button(frame,relief=RIDGE,text="View Codes",bd=7,bg="White",fg="Black",command=lambda:sp.Popen([program, file]), font=("Times New Roman", 15))
+button2 = Button(frame,relief=RIDGE,text="View Codes",bd=7,bg="White",fg="Black",command=lambda:sp.Popen([program, file]), font=("Times New Roman", 15), cursor="hand2"Add)
 button2.place(relx=0.55,rely=0.7,relwidth=0.35,relheight=0.1)
 
 label2 = Label(frame,font=("Times New Roman", 15), fg="Black", bg="white")
