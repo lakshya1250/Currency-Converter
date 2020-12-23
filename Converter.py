@@ -106,40 +106,40 @@ background_label.place(relheight=1, relwidth=1)
 root.iconbitmap("Icon.ico")
 
 # Creating The Main Window
-frame = Frame(root,bg="white")
-frame.place(relx=0.1,rely=0.1,relwidth=0.8,relheight=0.8)
+frame1 = Frame(root,bg="white")
+frame1.place(relx=0.1,rely=0.1,relwidth=0.8,relheight=0.8)
 
-label = Label(frame, text="Currency Converter", font=("Times New Roman", 20), fg="Black", bg="White")
+label = Label(frame1, text="Currency Converter", font=("Times New Roman", 20), fg="Black", bg="White")
 label.place(relwidth=0.5, relheight=0.08, relx=0.26, rely=0.055)
 
-info = Button(frame, relief=RIDGE, text="i", font=("Times New Roman", 20), fg="Black", bg="White", command=helper, cursor="hand2")
-info.place(relwidth=0.1, relheight=0.08, relx=0.85, rely=0.05)
+info1 = Button(frame1, relief=RIDGE, text="i", font=("Times New Roman", 20), fg="Black", bg="White", command=helper, cursor="hand2")
+info1.place(relwidth=0.1, relheight=0.08, relx=0.85, rely=0.05)
 
-froml = Label(frame, text="From:",font=("Times New Roman",20),fg="Black",bg="White")
+froml = Label(frame1, text="From:",font=("Times New Roman",20),fg="Black",bg="White")
 froml.place(relx=0.1,rely=0.2,relwidth=0.2,relheight=0.1)
 
-entry1 = Entry(frame,relief=GROOVE,bg="White",bd=7,font=("Times New Roman",20),fg="Black")
+entry1 = Entry(frame1,relief=GROOVE,bg="White",bd=7,font=("Times New Roman",20),fg="Black")
 entry1.place(relx=0.3,rely=0.2,relwidth=0.6,relheight=0.1)
 
-from2 = Label(frame,text="To:",font=("Times New Roman",20),fg="Black",bg="White")
+from2 = Label(frame1,text="To:",font=("Times New Roman",20),fg="Black",bg="White")
 from2.place(relx=0.1,rely=0.375,relwidth=0.2,relheight=0.1)
 
-entry2 = Entry(frame,relief=GROOVE,bg="White",bd=7,font=("Times New Roman",20),fg="Black")
+entry2 = Entry(frame1,relief=GROOVE,bg="White",bd=7,font=("Times New Roman",20),fg="Black")
 entry2.place(relx=0.3,rely=0.375,relwidth=0.6,relheight=0.1)
 
-from3 = Label(frame,text="Amount:",font=("Times New Roman",20),fg="Black",bg="White")
+from3 = Label(frame1,text="Amount:",font=("Times New Roman",20),fg="Black",bg="White")
 from3.place(relx=0.08,rely=0.55,relwidth=0.2,relheight=0.1)
 
-entry3 = Entry(frame,relief=GROOVE,bg="White",bd=7,font=("Times New Roman",20),fg="Black")
+entry3 = Entry(frame1,relief=GROOVE,bg="White",bd=7,font=("Times New Roman",20),fg="Black")
 entry3.place(relx=0.3,rely=0.55,relwidth=0.6,relheight=0.1)
 
-button = Button(frame,relief=RIDGE,text="Convert",bd=7,bg="White",fg="Black",command=lambda:convert(entry1.get(), entry2.get(), entry3.get()), font=("Times New Roman", 15), cursor="hand2")
-button.place(relx=0.1,rely=0.7,relwidth=0.35,relheight=0.1)
+button1 = Button(frame1,relief=RIDGE,text="Convert",bd=7,bg="White",fg="Black",command=lambda:convert(entry1.get(), entry2.get(), entry3.get()), font=("Times New Roman", 15), cursor="hand2")
+button1.place(relx=0.1,rely=0.7,relwidth=0.35,relheight=0.1)
 
-button2 = Button(frame,relief=RIDGE,text="View Codes",bd=7,bg="White",fg="Black",command=lambda:sp.Popen([program, file]), font=("Times New Roman", 15), cursor="hand2")
+button2 = Button(frame1,relief=RIDGE,text="View Codes",bd=7,bg="White",fg="Black",command=lambda:sp.Popen(["notepad.exe", "Codes.txt"]), font=("Times New Roman", 15), cursor="hand2")
 button2.place(relx=0.55,rely=0.7,relwidth=0.35,relheight=0.1)
 
-label2 = Label(frame,font=("Times New Roman", 15), fg="Black", bg="white")
+label2 = Label(frame1,font=("Times New Roman", 15), fg="Black", bg="white")
 label2.place(relx=0.1, rely=0.8, relwidth=0.8, relheight=0.2)    
 
 # ----- Driver Code -----
