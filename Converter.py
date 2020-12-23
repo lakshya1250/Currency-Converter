@@ -41,59 +41,62 @@ def convert(input1, input2, amount):
     """Converting The Currencies"""
     if input1 == "" or input2 == "" or amount == "":
         messagebox.showerror("Empty Fields", "One Or More Fields Are Empty. Please Fill All Fields.")
-    if int(amount) <= 0:
+    if amount.isnumeric() == False or int(amount) <= 0:
         messagebox.showerror("Wrong Input", "You Have Entered Negative Input. Please Enter Positive Input.")
     else:
-        isfull1 = True
-        isfull2 = True
-        short1 = None
-        short2 = None
-        if len(input1) == 3:
-            input1 = input1.upper()
-            isfull1 = False
-            num1 = latest[input1]
-            short1 = input1
-        if len(input2) == 3:
-            input2 = input2.upper()
-            isfull2 = False
-            num2 = latest[input2]
-            short2 = input2
-        if isfull1:
-            if input1.count(" ") > 0:
-                input1 = input1.split(" ")
-                for item in input1:
-                    item.capitalize()
-                input1 = " ".join(input1)
-                for key, value in names.items():
-                    if value == input1:
-                        num1 = latest[key]
-                        short1 = key
-            else:
-                input1 = input1.capitalize()
-                for key, value in names.items():
-                    if value == input1:
-                        num1 = latest[key]
-                        short1 = key
-        if isfull2:
-            if input2.count(" ") > 0:
-                input2 = input2.split(" ")
-                for item in input2:
-                    item.capitalize()
-                input2 = " ".join(input2)
-                for key, value in names.items():
-                    if value == input2:
-                        num2 = latest[key]
-                        short2 = key                    
-            else:
-                input2 = input2.capitalize()
-                for key, value in names.items():
-                    if value == input2:
-                        num2 = latest[key]
-                        short2 = key
-        am = num2 / num1
-        final = int(amount) * am
-        final_text = str(str(amount)+" "+names[short1]+" Are \n"+str(final)+" "+names[short2]+" ")
-        label2["text"] = final_text
+        try:
+            isfull1 = True
+            isfull2 = True
+            short1 = None
+            short2 = None
+            if len(input1) == 3:
+                input1 = input1.upper()
+                isfull1 = False
+                num1 = latest[input1]
+                short1 = input1
+            if len(input2) == 3:
+                input2 = input2.upper()
+                isfull2 = False
+                num2 = latest[input2]
+                short2 = input2
+            if isfull1:
+                if input1.count(" ") > 0:
+                    input1 = input1.split(" ")
+                    for item in input1:
+                        item.capitalize()
+                    input1 = " ".join(input1)
+                    for key, value in names.items():
+                        if value == input1:
+                            num1 = latest[key]
+                            short1 = key
+                else:
+                    input1 = input1.capitalize()
+                    for key, value in names.items():
+                        if value == input1:
+                            num1 = latest[key]
+                            short1 = key
+            if isfull2:
+                if input2.count(" ") > 0:
+                    input2 = input2.split(" ")
+                    for item in input2:
+                        item.capitalize()
+                    input2 = " ".join(input2)
+                    for key, value in names.items():
+                        if value == input2:
+                            num2 = latest[key]
+                            short2 = key                    
+                else:
+                    input2 = input2.capitalize()
+                    for key, value in names.items():
+                        if value == input2:
+                            num2 = latest[key]
+                            short2 = key
+            am = num2 / num1
+            final = int(amount) * am
+            final_text = str(str(amount)+" "+names[short1]+" Are \n"+str(final)+" "+names[short2]+" ")
+            label2["text"] = final_text            
+        except Exception as e: 
+            messagebox.showerror("Wrong Codes", "You Have Entered Wrong Currency Codes Or Names. Please Check The Codes And Names From The Help File And Try Again.")
     
 # ----- Main Code -----
 
